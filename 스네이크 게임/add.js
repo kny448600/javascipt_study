@@ -10,22 +10,18 @@ const stopBtn = document.querySelector("#stopBtn");
 const scoreDisplay = document.querySelector("#score");
 const width = 10;
 let snake = 0;
-
+let interval;
+let intervalTime = 1000;
 function start() {
     square[snake].classList.add("snake");
-    runGame()
-    runGame()
+    interval = setInterval(runGame, intervalTime);
 }
-   
-
 function runGame() {
+    squares[snake].classList.remove("snake");
     snake = snake + 1;
-    square[snake].classList.add("snake");
+    squares[snake].classList.add("snake");
 }
-
 startBtn.addEventListener("click", start);
-moveSnake();
-moveSnake();
 
 
 
@@ -347,8 +343,3 @@ moveSnake();
 
 
 
-
-
-하상현 병신새끼
-아래하 위상 검을현
-시껌
