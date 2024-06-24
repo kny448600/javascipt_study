@@ -14,7 +14,7 @@ function makeplayer() {
 }
 makeplayer()
 
-function moveplayer(e) {  }
+
 
 document.addEventListener("keyup", moveplayer)
 
@@ -96,3 +96,16 @@ function gameStart(){
     ]
 }
 
+function ShadowRoot(e) {
+    let id;
+    let bulletLoc = playerLoc;
+    function moveBullet() {
+        stage[bulletLoc].classList.remove("bullet");
+        p -= stageSize;
+        stage[bulletLoc].classList.add("bullet");
+    }
+    if (e.key === "ArrowUp") {
+        id = setInterval(moveBullet, 300)
+    }
+}
+document.addEventListener("keydown", shoot);
